@@ -1,0 +1,21 @@
+# DO NOT USE - Currently not working
+
+[tool.poetry]
+name = "scatpack"
+version = "0.1.0"
+description = ""
+authors = ["Jason DeCorte <jason@spraoi.ai>"]
+packages = [
+    { include = "scatpack.core", from = "src/pkg_core" },
+    { include = "scatpack.plugin_a", from = "src/pkg_plugin_a" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+#[tool.poetry.dev-dependencies]
+#pytest = "^5.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

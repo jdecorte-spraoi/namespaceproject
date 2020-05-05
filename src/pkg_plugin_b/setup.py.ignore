@@ -1,7 +1,7 @@
-from setuptools import setup
+from setuptools import setup, find_namespace_packages
 
 setup(
-    name='scatpack.plugin_a',
+    name='scatpack_plugin_b',
 
     version='0.1.0',
 
@@ -11,6 +11,7 @@ setup(
     author='Jason',
     author_email='jason@spraoi.ai',
 
-    namespace_packages=['scatpack'],
-    packages=['scatpack.plugin_a'],
+    # namespace_packages=['scatpack'],
+    packages=['scatpack.plugin_b'],
+    # packages=find_namespace_packages(),
 )

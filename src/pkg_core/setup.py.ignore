@@ -1,16 +1,17 @@
 from setuptools import setup, find_namespace_packages
 
 setup(
-    name='scatpack',
+    name='scatpack_core',
 
     version='0.1.0',
 
-    description='This is the entire monolithic repository package',
+    description='This is the core functionality.',
     long_description='Here is a very very very very very long description.',
 
     author='Jason',
     author_email='jason@spraoi.ai',
 
-    namespace_packages=['scatpack'],
-    packages=find_namespace_packages(),
+    # namespace_packages=['scatpack'],
+    packages=['scatpack.core'],
+    # packages=find_namespace_packages(),
 )
