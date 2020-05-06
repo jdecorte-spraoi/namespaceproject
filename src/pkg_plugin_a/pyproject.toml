@@ -9,7 +9,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.7"
-"scatpack.core" = { git = "https://jdecorte-spraoi:6tbH4^AXuHuz7qKe@github.com/jdecorte-spraoi/namespaceproject.git@master#subdirectory=src/pkg_core" }
+"scatpack.core" = { git = "https://jdecorte-spraoi:6tbH4^AXuHuz7qKe@github.com/jdecorte-spraoi/namespaceproject.git", branch = "master", subdirectory = "src/pkg_core" }
 
 #[tool.poetry.dev-dependencies]
 #pytest = "^5.2"
