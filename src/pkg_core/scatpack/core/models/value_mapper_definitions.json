@@ -1,0 +1,1364 @@
+{
+  "valueMapperDefinitions": [
+    {
+      "category": "action",
+      "displayName": "Column Rename",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Float",
+            "Integer",
+            "String",
+            "Date",
+            "Boolean"
+          ],
+          "name": "fieldOne",
+          "type": []
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "renameField",
+      "template": "Rename $$fieldOne as $$fieldTwo"
+    },
+    {
+      "category": "action",
+      "displayName": "Drop Row",
+      "name": "dropRow",
+      "template": "Drop row"
+    },
+    {
+      "category": "action",
+      "displayName": "Drop Fields",
+      "input": [
+        {
+          "allowMultiple": true,
+          "columnType": [
+            "Float",
+            "Integer",
+            "String",
+            "Date",
+            "Boolean"
+          ],
+          "name": "listOfColumns",
+          "type": []
+        }
+      ],
+      "name": "dropFields",
+      "template": "Drop $$listOfColumns"
+    },
+    {
+      "category": "action",
+      "displayName": "Keep Columns",
+      "input": [
+        {
+          "allowMultiple": true,
+          "columnType": [
+            "Float",
+            "Integer",
+            "String",
+            "Date",
+            "Boolean"
+          ],
+          "name": "listOfColumns",
+          "type": []
+        }
+      ],
+      "name": "keepFields",
+      "template": "Keep $$listOfColumns"
+    },
+    {
+      "category": "action",
+      "displayName": "Add",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldOne",
+          "type": [
+            "NewColumn"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldThree",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        }
+      ],
+      "name": "add",
+      "template": "Add $$fieldTwo + $$fieldThree = $$fieldOne"
+    },
+    {
+      "category": "action",
+      "displayName": "Absolute Value",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldOne",
+          "type": [
+            "NewColumn"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldTwo",
+          "type": []
+        }
+      ],
+      "name": "absoluteValue",
+      "template": "Take Absolute Value of $$fieldTwo into $$fieldOne"
+    },
+    {
+      "category": "action",
+      "displayName": "Subtract",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldOne",
+          "type": [
+            "NewColumn"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldThree",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        }
+      ],
+      "name": "subtract",
+      "template": "Subtract $$fieldOne = $$fieldTwo - $$fieldThree"
+    },
+    {
+      "category": "action",
+      "displayName": "Multiply",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldOne",
+          "type": [
+            "NewColumn"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldThree",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        }
+      ],
+      "name": "multiply",
+      "template": "Multiply $$fieldOne = $$fieldTwo * $$fieldThree"
+    },
+    {
+      "category": "action",
+      "displayName": "Replace Text",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": []
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "stringOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "stringTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "replaceString",
+      "template": "Replace $$stringOne with $$stringTwo in Column $$fieldOne"
+    },
+    {
+      "category": "action",
+      "displayName": "Replace Text With Mapping",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": []
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "stringMapping",
+          "type": [
+            "Dictionary"
+          ]
+        }
+      ],
+      "name": "replaceStringWithDictionary",
+      "template": "Apply $$stringMapping in Column $$fieldOne"
+    },
+    {
+      "category": "action",
+      "displayName": "Error Code",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "giveErrorCode",
+      "template": "Give Error Code $$fieldOne"
+    },
+    {
+      "category": "condition",
+      "displayName": "Equals",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        }
+      ],
+      "name": "equals",
+      "template": "Where $$fieldOne = $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "Greater Than",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        }
+      ],
+      "name": "greaterThan",
+      "template": "Where $$fieldOne > $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "Greater Than or Equals",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        }
+      ],
+      "name": "greaterThanOrEquals",
+      "template": "Where $$fieldOne >= $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "Less Than",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        }
+      ],
+      "name": "lessThan",
+      "template": "Where $$fieldOne < $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "Less Than or Equals",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Integer",
+            "Float"
+          ]
+        }
+      ],
+      "name": "lessThanOrEquals",
+      "template": "Where $$fieldOne <= $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "Is Empty",
+      "input": [
+        {
+          "allowMultiple": true,
+          "columnType": [
+            "Float",
+            "Integer",
+            "String",
+            "Date",
+            "Boolean"
+          ],
+          "name": "listOfColumns",
+          "type": []
+        }
+      ],
+      "name": "isEmpty",
+      "template": "Where $$listOfColumns Contains an Empty Column"
+    },
+    {
+      "category": "condition",
+      "displayName": "Is Not Empty",
+      "input": [
+        {
+          "allowMultiple": true,
+          "columnType": [
+            "Float",
+            "Integer",
+            "String",
+            "Date",
+            "Boolean"
+          ],
+          "name": "listOfColumns",
+          "type": []
+        }
+      ],
+      "name": "isNotEmpty",
+      "template": "Where $$listOfColumns Does Not Contain an Empty Column"
+    },
+    {
+      "category": "condition",
+      "displayName": "Is in List",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": []
+        },
+        {
+          "allowMultiple": true,
+          "columnType": [],
+          "name": "listOfStrings",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "isInList",
+      "template": "Where $$fieldOne Is In $$listOfStrings"
+    },
+    {
+      "category": "condition",
+      "displayName": "Is Not in List",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": []
+        },
+        {
+          "allowMultiple": true,
+          "columnType": [],
+          "name": "listOfStrings",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "isNotInList",
+      "template": "Where $$fieldOne Is Not In $$listOfStrings"
+    },
+    {
+      "category": "condition",
+      "displayName": "For All",
+      "name": "forAll",
+      "template": "Where *"
+    },
+    {
+      "category": "condition",
+      "displayName": "Date Equals",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "Date"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Date"
+          ]
+        }
+      ],
+      "name": "dateEquals",
+      "template": "Where $$fieldOne Date Equals $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "Date Between",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "Date"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Date"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldThree",
+          "type": [
+            "Date"
+          ]
+        }
+      ],
+      "name": "dateBetween",
+      "template": "Where $$fieldOne Is Between $$fieldTwo and $$fieldThree"
+    },
+    {
+      "category": "condition",
+      "displayName": "Date Before Or On",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "Date"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Date"
+          ]
+        }
+      ],
+      "name": "dateLessThanOrEquals",
+      "template": "Where $$fieldOne Is On Or Before $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "Date Before",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "Date"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Date"
+          ]
+        }
+      ],
+      "name": "dateLessThan",
+      "template": "Where $$fieldOne Is Before $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "Date After Or On",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "Date"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Date"
+          ]
+        }
+      ],
+      "name": "dateGreaterThanOrEquals",
+      "template": "Where $$fieldOne Is On Or After $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "Date After",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "Date"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Date"
+          ]
+        }
+      ],
+      "name": "dateGreaterThan",
+      "template": "Where $$fieldOne Is After $$fieldTwo"
+    },
+    {
+      "category": "action",
+      "displayName": "Create Timestamp",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldOne",
+          "type": [
+            "NewColumn"
+          ]
+        }
+      ],
+      "name": "createTimestamp",
+      "template": "$$fieldOne = Current Timestamp"
+    },
+    {
+      "category": "action",
+      "displayName": "Assign Constant",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldOne",
+          "type": [
+            "NewColumn"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldTwo",
+          "type": [
+            "Float",
+            "Integer",
+            "String",
+            "Date",
+            "Boolean"
+          ]
+        }
+      ],
+      "name": "assignConstant",
+      "template": "$$fieldOne = $$fieldTwo"
+    },
+    {
+      "category": "action",
+      "displayName": "Add Days",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldOne",
+          "type": [
+            "NewColumn"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldThree",
+          "type": [
+            "Integer"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Date"
+          ]
+        }
+      ],
+      "name": "addDays",
+      "template": "$$fieldOne = $$fieldTwo + $$fieldThree Days"
+    },
+    {
+      "category": "action",
+      "displayName": "Add Months",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldOne",
+          "type": [
+            "NewColumn"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldThree",
+          "type": [
+            "Integer"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Date"
+          ]
+        }
+      ],
+      "name": "addMonths",
+      "template": "$$fieldOne = $$fieldTwo + $$fieldThree Months"
+    },
+    {
+      "category": "action",
+      "displayName": "Add Years",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldOne",
+          "type": [
+            "NewColumn"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldThree",
+          "type": [
+            "Integer"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Date"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "Date"
+          ]
+        }
+      ],
+      "name": "addYears",
+      "template": "$$fieldOne = $$fieldTwo + $$fieldThree Years"
+    },
+    {
+      "category": "action",
+      "displayName": "Capitalize",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [],
+          "name": "fieldOne",
+          "type": [
+            "NewColumn"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": []
+        }
+      ],
+      "name": "capitalize",
+      "template": "Capitalize $$fieldOne = $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "String Empty",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringEmpty",
+      "template": "Where $$fieldOne is an Empty String"
+    },
+    {
+      "category": "condition",
+      "displayName": "String Equals",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringEquals",
+      "template": "Where $$fieldOne Equals $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "String Not Equals",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringNotEquals",
+      "template": "Where $$fieldOne Does Not Equals $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "String Equals Ignore Case",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringEqualsIC",
+      "template": "Where $$fieldOne Equals $$fieldTwo (Case Insensitive)"
+    },
+    {
+      "category": "condition",
+      "displayName": "String Not Equals Ignore Case",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringNotEqualsIC",
+      "template": "Where $$fieldOne Does Not Equals $$fieldTwo (Case Insensitive)"
+    },
+    {
+      "category": "condition",
+      "displayName": "String Before Ignore Case",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringLessThanIC",
+      "template": "Where $$fieldOne Is Alphabetically Before $$fieldTwo (Case Insensitive)"
+    },
+    {
+      "category": "condition",
+      "displayName": "String Before",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringLessThan",
+      "template": "Where $$fieldOne Is Alphabetically Before $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "String After Ignore Case",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringGreaterThanIC",
+      "template": "Where $$fieldOne Is Alphabetically After $$fieldTwo (Case Insensitive)"
+    },
+    {
+      "category": "condition",
+      "displayName": "String After",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringGreaterThan",
+      "template": "Where $$fieldOne Is Alphabetically After $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "String Before Or Equals Ignore Case",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringLessThanOrEqualsIC",
+      "template": "Where $$fieldOne Is Alphabetically Before Or Equals $$fieldTwo (Case Insensitive)"
+    },
+    {
+      "category": "condition",
+      "displayName": "String Before Or Equals",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringLessThanOrEquals",
+      "template": "Where $$fieldOne Is Alphabetically Before Or Equals $$fieldTwo"
+    },
+    {
+      "category": "condition",
+      "displayName": "String After Or Equals Ignore Case",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringGreaterThanOrEqualsIC",
+      "template": "Where $$fieldOne Is Alphabetically After Or Equals $$fieldTwo (Case Insensitive)"
+    },
+    {
+      "category": "condition",
+      "displayName": "String After Or Equals",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldOne",
+          "type": [
+            "String"
+          ]
+        },
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "String"
+          ],
+          "name": "fieldTwo",
+          "type": [
+            "String"
+          ]
+        }
+      ],
+      "name": "stringGreaterThanOrEquals",
+      "template": "Where $$fieldOne Is Alphabetically After Or Equals $$fieldTwo"
+    },
+    {
+      "category": "aggregate",
+      "displayName": "Any Value",
+      "input": [
+        {
+          "allowMultiple": true,
+          "columnType": [
+            "Boolean",
+            "Integer",
+            "Float",
+            "String",
+            "Date"
+          ],
+          "name": "listOfColumns",
+          "type": []
+        }
+      ],
+      "name": "anyValue",
+      "outputType": "Boolean",
+      "template": "Where $$listOfColumns has at least one value in a row"
+    },
+    {
+      "category": "aggregate",
+      "displayName": "All Value",
+      "input": [
+        {
+          "allowMultiple": true,
+          "columnType": [
+            "Boolean",
+            "Integer",
+            "Float",
+            "String",
+            "Date"
+          ],
+          "name": "listOfColumns",
+          "type": []
+        }
+      ],
+      "name": "allValue",
+      "outputType": "Boolean",
+      "template": "Where $$listOfColumns is Completely Populated with Values"
+    },
+    {
+      "category": "aggregate",
+      "displayName": "No Value",
+      "input": [
+        {
+          "allowMultiple": true,
+          "columnType": [
+            "Boolean",
+            "Integer",
+            "Float",
+            "String",
+            "Date"
+          ],
+          "name": "listOfColumns",
+          "type": []
+        }
+      ],
+      "name": "noValue",
+      "outputType": "Boolean",
+      "template": "Where $$listOfColumns has No Values in it"
+    },
+    {
+      "category": "aggregate",
+      "displayName": "Average",
+      "input": [
+        {
+          "allowMultiple": false,
+          "columnType": [
+            "Integer",
+            "Float"
+          ],
+          "name": "fieldOne",
+          "type": []
+        }
+      ],
+      "name": "average",
+      "outputType": "Float",
+      "template": "Average $$fieldOne"
+    },
+    {
+      "category": "condition",
+      "displayName": "And",
+      "input": [
+        {
+          "allowMultiple": true,
+          "columnType": [],
+          "name": "functionOne",
+          "type": [
+            "Condition"
+          ]
+        }
+      ],
+      "name": "and",
+      "template": "If $$functionOne"
+    },
+    {
+      "category": "condition",
+      "displayName": "Or",
+      "input": [
+        {
+          "allowMultiple": true,
+          "columnType": [],
+          "name": "functionOne",
+          "type": [
+            "Condition"
+          ]
+        }
+      ],
+      "name": "or",
+      "template": "If $$functionOne"
+    }
+  ]
+}

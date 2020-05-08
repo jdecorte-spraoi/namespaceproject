@@ -1,0 +1,242 @@
+{
+  "steps": [
+    {
+      "category": "action",
+      "displayName": "Run Notebook",
+      "input": [
+        {
+          "name": "parameters",
+          "type": "Dictionary"
+        },
+        {
+          "name": "script_path",
+          "type": "S3Path"
+        }
+      ],
+      "output": [
+        {
+          "name": "output_path",
+          "type": "S3Path"
+        },
+        {
+          "name": "dataset",
+          "type": "Dataset"
+        },
+        {
+          "name": "modelVersionId",
+          "type": "String"
+        }
+      ],
+      "stepType": "runNotebook",
+      "stepVersion": "v1"
+    },
+    {
+      "category": "test",
+      "displayName": "Schema Verification",
+      "input": [
+        {
+          "name": "dataset",
+          "type": "Dataset"
+        }
+      ],
+      "output": [
+        {
+          "name": "dataset",
+          "type": "Dataset"
+        },
+        {
+          "name": "passed",
+          "type": "Boolean"
+        },
+        {
+          "name": "total_count",
+          "type": "int"
+        },
+        {
+          "name": "error_ratio",
+          "type": "float"
+        }
+      ],
+      "stepType": "schemaVerification",
+      "stepVersion": "v2"
+    },
+    {
+      "cateogry": "transformation",
+      "displayName": "Column Mapper",
+      "input": [
+        {
+          "name": "sourceDataset",
+          "type": "Dataset"
+        },
+        {
+          "name": "sourceSchema",
+          "type": "Schema"
+        },
+        {
+          "name": "destinationSchema",
+          "type": "Schema"
+        },
+        {
+          "name": "columnDictionary",
+          "type": "ColumnDictionary"
+        }
+      ],
+      "output": [
+        {
+          "name": "dataset",
+          "type": "Dataset"
+        }
+      ],
+      "stepType": "columnMapper",
+      "stepVersion": "v1"
+    },
+    {
+      "cateogry": "transformation",
+      "displayName": "Value Mapper",
+      "input": [
+        {
+          "name": "dataset",
+          "type": "Dataset"
+        },
+        {
+          "name": "sourceSchema",
+          "type": "Schema"
+        },
+        {
+          "name": "ruleSet",
+          "type": "RuleSet"
+        }
+      ],
+      "output": [
+        {
+          "name": "dataset",
+          "type": "Dataset"
+        }
+      ],
+      "stepType": "valueMapper",
+      "stepVersion": "v1"
+    },
+    {
+      "category": "action",
+      "displayName": "Write To S3",
+      "input": [
+        {
+          "name": "dataset",
+          "type": "Dataset"
+        },
+        {
+          "name": "s3BucketName",
+          "type": "String"
+        },
+        {
+          "name": "s3Path",
+          "type": "String"
+        },
+        {
+          "name": "format",
+          "type": "String"
+        }
+      ],
+      "output": [
+        {
+          "name": "dataset",
+          "type": "Dataset"
+        }
+      ],
+      "stepType": "writeToS3Bucket",
+      "stepVersion": "v1"
+    },
+    {
+      "category": "action",
+      "displayName": "Export Data",
+      "input": [
+        {
+          "allowedValues": [
+            "sftp",
+            "s3"
+          ],
+          "name": "mode",
+          "type": "String"
+        },
+        {
+          "name": "hostname",
+          "type": "String",
+          "when": {
+            "key": "mode",
+            "nonMatchingValue": "none",
+            "value": "sftp"
+          }
+        },
+        {
+          "name": "username",
+          "type": "String",
+          "when": {
+            "key": "mode",
+            "nonMatchingValue": "none",
+            "value": "sftp"
+          }
+        },
+        {
+          "name": "dataset",
+          "type": "Dataset"
+        },
+        {
+          "name": "s3BucketName",
+          "type": "String",
+          "when": {
+            "key": "mode",
+            "nonMatchingValue": "none",
+            "value": "s3"
+          }
+        },
+        {
+          "name": "s3Path",
+          "type": "String",
+          "when": {
+            "key": "mode",
+            "nonMatchingValue": "none",
+            "value": "s3"
+          }
+        },
+        {
+          "name": "format",
+          "type": "String"
+        }
+      ],
+      "output": [
+        {
+          "name": "dataset",
+          "type": "Dataset"
+        }
+      ],
+      "stepType": "exportData",
+      "stepVersion": "v1"
+    },
+    {
+      "category": "action",
+      "displayName": "Update Analytics Dashboard",
+      "input": [
+        {
+          "name": "dataset",
+          "type": "Dataset"
+        },
+        {
+          "name": "publishUrl",
+          "type": "String"
+        }
+      ],
+      "output": [
+        {
+          "name": "passed",
+          "type": "Boolean"
+        },
+        {
+          "name": "total",
+          "type": "String"
+        }
+      ],
+      "stepType": "publishToSqs",
+      "stepVersion": "v1"
+    }
+  ]
+}
