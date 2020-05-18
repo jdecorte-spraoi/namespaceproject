@@ -4,6 +4,7 @@ import importlib
 import json
 
 from scatpack.core.models import catalog
+from scatpack.core import __version__
 
 try:
     import scatpack.plugin
@@ -36,17 +37,20 @@ def summer(x, y):
 
 
 def run(arg1, arg2):
-    print(f"Name  = Core")
+    print(f"Name    = Core")
+    print(f"Version = {__version__}")
     print(f"Value = {summer(arg1, arg2)}")
     if 'scatpack.plugin.plugin_a' in plugins:
         plugin_a = plugins['scatpack.plugin.plugin_a']
         print(f"Name = {plugin_a.name}")
+        print(f"Version = {plugin_a.__version__}")
         print(f"Value= {plugin_a.multiplier(arg1, arg2)}")
     if 'scatpack.plugin.plugin_b' in plugins:
         plugin_b = plugins['scatpack.plugin.plugin_b']
         print(f"Name = {plugin_b.name}")
+        print(f"Version = {plugin_b.__version__}")
         print(f"Value= {plugin_b.subtractor(arg1, arg2)}")
-    print(f"Config key = {config.key}")
+    print(f"Config key = {config.uuid}")
     print(f"Steps = {','.join([x['displayName'] for x in master_steps])}")
     print(f"Catalog = {','.join([x['name'] for x in catalog.value_mapper_definition])}")
     print("finished")
